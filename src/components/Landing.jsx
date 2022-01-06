@@ -41,7 +41,7 @@ const Landing = () => {
               <div className="credentials">
                 <h1 className="name-link">
                   Made with <span> <i class="fas fa-heart"></i> </span> by{" "}
-                  <a href="https://thehartajsingh05.web.app/" target="_blank">
+                  <a href="https://thehartajsingh05.web.app/" target="_blank" rel="noreferrer noopener">
                     Hartaj Singh
                   </a>
                 </h1>
