@@ -14,11 +14,14 @@ jobs:
              node-version: '14.17.0'
          - name: Install Node modules
            run: yarn
-         - name: Build the Project
-           run: yarn build   
+        #  - name: Build the Project
+        #    run: yarn build   
 
          - name: Testing Env
-           run: echo $VERCEL_TIC_TAC_TOE_PROJECT_ID      
+           run: |
+             if [ "$VERCEL_TIC_TAC_TOE_PROJECT_ID" = "prj_e6jksS7POA23Km0ZnZeSZb9rrTlr""]     
+             then 
+                echo "Got the secret"
         #  - name: Sets the vercel env
         #    run: |
         #      cd build
