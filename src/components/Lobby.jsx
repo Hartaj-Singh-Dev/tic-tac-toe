@@ -1,0 +1,161 @@
+import React, { useState, useEffect } from "react";
+import Board from "./Board";
+import Stats from "./Stats";
+import socket from "./../apis/Port"
+import Announcement from "./Announcement";
+import { motion, AnimatePresence } from "framer-motion";
+import "./styles/lobby.css";
+// import CircularProgress from '@mui/material/CircularProgress';
+// import Spinner from "./Spinner"
+
+const Game = (props) => {
+    const [annoucmnet, setannoucmnet] = useState(false);
+    const [message, setmessage] = useState("");
+    const [OpponentDisconnected, setOpponentDisconnected] = useState(false);
+    const [isvisible, setisVisible] = useState(false);
+
+  
+    const playagain = () =>{
+      setannoucmnet(false)
+      setisVisible(false)
+    }
+
+    useEffect(() => {
+      socket.on("announcement", (text) => {
+        switch (text) {
+          case "player_one":
+            if (props.isPlayer_one) {
+              setannoucmnet(true);
+              setmessage("You Won !!! 🥳 ");
+              setisVisible(true)
+            } else {
+              setannoucmnet(true);
+              setmessage("You Lost!! 🥺");
+              setisVisible(true)
+            }
+            break;
+
+          case "player_two":
+            if (props.isPlayer_one) {
+              setannoucmnet(true);
+              setmessage("You Lost");
+              setisVisible(true)
+            } else {
+              setannoucmnet(true);
+              setmessage("You Won!!");
+              setisVisible(true)
+            }
+            break;
+
+          case "tie":
+            setannoucmnet(true);
+            setmessage("Tie");
+            setisVisible(true)
+        }
+      });
+
+      setTimeout(() => {
+        setannoucmnet(false);
+      }, 1250);
+
+      socket.on("user-disconnected", () => {
+        setOpponentDisconnected(true);
+      });
+
+      return ()=>{
+        socket.off("user-disconnected")
+        socket.off("announcment")
+      }
+    }, []);
+   
+  
+    const gamestate = props.gamestate;
+    console.log(gamestate);
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%",
+        }}
+      >
+        {OpponentDisconnected && (
+          <AnimatePresence>
+            <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} style={{ display: "flex", alignItems:"center", justifyContent:"center", height:"100%" , position:"absolute" , left:"0%" , top:"0%" , width:"100%"}}>
+              <h6>Opppoent disconnected 🥺</h6>
+            </motion.div>
+          </AnimatePresence>
+        )}
+
+	{!OpponentDisconnected && <div className="game">
+		<div className="board-container">
+			<Board  gamestate={gamestate} isPlayer_one={props.isPlayer_one} />
+		</div>
+		<div className="stats-container">
+			{annoucmnet && <Announcement>{message}</Announcement>}
+			{!annoucmnet && <Stats gamestate={gamestate} isPlayer_one={props.isPlayer_one}/>}
+      {isvisible ? <button className="playagainButton" onClick={()=>{playagain()}}>Play Again</button> : null}
+		</div>
+	</div>}
+      </div>
+    );
+  };
+
+
+const Waiting = (props) => {
+    return (
+      <div className="waiting_Area">
+  <h2 className="waiting-area-TextHeader">Waiting for someone to join</h2>
+  <p>you can copy the RoomName and send to other player 👇 </p>
+  {/* <CircularProgress/> */}
+  {/* <Spinner/> */}
+  <button onClick={()=>{navigator.clipboard.writeText(props.code)}}>{props.code}</button>
+      </div>
+    );
+  };
+
+
+
+
+const Lobby = (props) => {
+  const [isPlayer_one, setisPlayer_one] = useState(props.is_Player_one);
+  const [code, setCode] = useState(props.code);
+  const [gamestate, setgamestate] = useState(props.gamestate);
+
+  useEffect(() => {
+    setisPlayer_one(props.is_Player_one)
+  }, [props.is_Player_one])  
+
+  useEffect(() => {
+    setgamestate(props.gamestate)
+  }, [props.gamestate])
+
+  useEffect(() => {
+    setCode(props.code)
+  }, [props.code])
+  
+  useEffect(() => {
+    socket.on("update", (gamestate) => {
+      setgamestate(gamestate);
+    });
+    return()=>{
+      socket.off("update")
+    }
+  },[]);
+
+  
+
+  return (
+    <React.Fragment>
+      {props.waiting && <Waiting code={code} />}
+      {!props.waiting &&  <Game gamestate={gamestate} isPlayer_one={isPlayer_one} />}
+    </React.Fragment>
+  );
+};
+
+
+
+
+export default Lobby;
+

@@ -1,0 +1,35 @@
+div.waiting_Area{
+	background: #1b1b1b;
+        height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+div.waiting_Area h2.waiting-area-TextHeader{
+	color: #ffff;
+}
+
+div.waiting_Area p {
+	color: #ffff;
+}
+
+div.waiting_Area button{
+	border: none;
+	outline-width: 0;
+	padding: 0.5rem 2rem;
+	cursor: pointer;
+	color: #1b1b1b;
+	background: #ffff;
+	font-family: "IBM Plex Mono";
+	font-weight: 600;
+	font-size: 1rem;
+	margin: 1rem 0 0 0;
+}
+
+div.waiting_Area button:active{
+	color: #ffff;
+	background: #1b1b1b;
+}
