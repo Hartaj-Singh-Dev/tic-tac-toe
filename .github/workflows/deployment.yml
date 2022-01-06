@@ -4,8 +4,8 @@ jobs:
   build-app:
     runs-on: ubuntu-latest
     env: 
-      VERCEL_TIC_TAC_TOE_ORG_ID: ${{secrets.VERCEL_TIC_TAC_TOE_ORG_ID}}
       VERCEL_TIC_TAC_TOE_PROJECT_ID: ${{secrets.VERCEL_TIC_TAC_TOE_PROJECT_ID}}
+      VERCEL_TIC_TAC_TOE_ORG_ID: ${{secrets.VERCEL_TIC_TAC_TOE_ORG_ID}}
       VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
     steps:
          - uses: actions/checkout@v2
@@ -15,17 +15,20 @@ jobs:
          - name: Install Node modules
            run: yarn
          - name: Build the Project
-           run: yarn build       
-         - name: Sets the vercel env
-           run: |
-             cd build
-             mkdir .vercel
-             cd .vercel
-             touch project.json
-             echo '{\"orgId\":\"$VERCEL_TIC_TAC_TOE_ORG_ID\", \"projectId\":\"$VERCEL_TIC_TAC_TOE_PROJECT_ID\"}' > project.json
-        
-         - name: Deploying the project
+           run: yarn build   
 
-           run: yarn deploy
+         - name: Testing Env
+           run: echo $VERCEL_TIC_TAC_TOE_PROJECT_ID      
+        #  - name: Sets the vercel env
+        #    run: |
+        #      cd build
+        #      mkdir .vercel
+        #      cd .vercel
+        #      touch project.json
+        #      echo '{\"orgId\":\"$VERCEL_TIC_TAC_TOE_ORG_ID\", \"projectId\":\"$VERCEL_TIC_TAC_TOE_PROJECT_ID\"}' > project.json
+        
+        #  - name: Deploying the project
+
+        #    run: yarn deploy
          - name: Setup Finished
            run: echo "THE PROJECT IS UP AND RUNNING" 
