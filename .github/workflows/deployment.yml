@@ -19,7 +19,7 @@ jobs:
 
          - name: Testing Env
            run: |
-             if [ "$VERCEL_TIC_TAC_TOE_PROJECT_ID" = "prj_e6jksS7POA23Km0ZnZeSZb9rrTlr""]     
+             if [ "$VERCEL_TIC_TAC_TOE_PROJECT_ID" == "prj_e6jksS7POA23Km0ZnZeSZb9rrTlr"]     
              then 
                 echo "Got the secret"
         #  - name: Sets the vercel env
