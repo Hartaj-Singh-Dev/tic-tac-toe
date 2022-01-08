@@ -98,7 +98,7 @@ div.Inputs form input{
 	caret-color: #ffff;
 	padding: 0 0 0 2px;
 	color: #ffff;
-	border: 2px solid #1b1b1b;
+	border-bottom: 2px solid #ffff;
 	background: transparent;
 }
 

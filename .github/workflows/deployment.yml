@@ -1,4 +1,4 @@
-name: My first Github Action
+name: Deployment on Production
 on: [push]
 jobs:
     build-app:
