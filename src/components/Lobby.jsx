@@ -6,7 +6,7 @@ import Announcement from "./Announcement";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles/lobby.css";
 // import CircularProgress from '@mui/material/CircularProgress';
-// import Spinner from "./Spinner"
+import Spinner from "./Spinner"
 
 const Game = (props) => {
     const [annoucmnet, setannoucmnet] = useState(false);
@@ -70,7 +70,6 @@ const Game = (props) => {
    
   
     const gamestate = props.gamestate;
-    console.log(gamestate);
     return (
       <div
         style={{
@@ -109,7 +108,7 @@ const Waiting = (props) => {
   <h2 className="waiting-area-TextHeader">Waiting for someone to join</h2>
   <p>you can copy the RoomName and send to other player 👇 </p>
   {/* <CircularProgress/> */}
-  {/* <Spinner/> */}
+  <Spinner/>
   <button onClick={()=>{navigator.clipboard.writeText(props.code)}}>{props.code}</button>
       </div>
     );

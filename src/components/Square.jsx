@@ -19,17 +19,17 @@ const Square = (props) => {
 		if(gamestate.p1_turn === gamestate.isPlayer_one && gamestate.grid[gamestate.index] === 0){
 			if(gamestate.isPlayer_one){
 				socket.emit("playerMove" ,gamestate.roomName , gamestate.index , 1);
-				console.log("X")
+				
 			}
 			else{
 				socket.emit("playerMove",gamestate.roomName ,gamestate.index , -1);
-				console.log("O");
+				
 			}
 		}
 	}
 
 	const gamestate = props.gamestate;
-	console.log(gamestate);
+	
 	return (
 		<React.Fragment>
 		<div className="square-inner" onClick={(e)=>{playerMove(e , gamestate)}}>

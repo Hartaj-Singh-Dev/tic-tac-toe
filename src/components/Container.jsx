@@ -47,7 +47,6 @@ const Container = () => {
 		}
 	},[])
 
-	// console.log(gameState);
 	const gamestate = gameState
 	return (
 		<div>

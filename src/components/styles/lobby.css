@@ -32,7 +32,7 @@ div.waiting_Area button{
 div.waiting_Area button:active{
 	transform: translate(2px,2px);
 	transition: cubic-bezier(.38,.78,.94,.33);
-	box-shadow: 8px 8px 0px 1px rgba(11, 206, 255, 0.75);
--webkit-box-shadow: 8px 8px 0px 1px rgba(6, 184, 255, 0.75);
--moz-box-shadow: 8px 8px 0px 1px rgba(0, 225, 255, 0.75);
+	box-shadow: 8px 8px 0px 1px rgba(141, 255, 11, 0.75);
+-webkit-box-shadow: 8px 8px 0px 1px rgba(126, 255, 6, 0.75);
+-moz-box-shadow: 8px 8px 0px 1px rgba(81, 255, 0, 0.75);
 }
