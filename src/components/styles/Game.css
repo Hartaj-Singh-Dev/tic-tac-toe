@@ -24,3 +24,9 @@ div.game div.chat-and-leaderboared{
 	height: 100%;
 	width: 30%;
 }
+
+@media only screen and (max-width: 750px){
+	div.game{
+		flex-direction: column;
+	}
+}

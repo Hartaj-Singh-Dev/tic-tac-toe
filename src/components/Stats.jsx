@@ -27,7 +27,7 @@ const Stats = (props) => {
           exit={{ opacity: 0 }}
         >
           {gamestate.p1_turn === isPlayer_one && (
-            <div className="turn" style={{color:"rgb(0,244,255)"}}>
+            <div className="turn" style={{color:"rgb(0,204,255)"}}>
               {" "}
               <h5>Your Turn</h5>
             </div>
@@ -35,7 +35,7 @@ const Stats = (props) => {
           {gamestate.p1_turn !== isPlayer_one && (
             <div
               className="turn"
-              style={{ display: "grid", gridTemplateRows: "1fr 1fr" , color:"rgb(0,244,255)"}}
+              style={{ display: "grid", gridTemplateRows: "1fr 1fr" , color:"rgb(0,204,255)"}}
             >
               {" "}
               <h5>{opponent_name}'s Turn</h5>

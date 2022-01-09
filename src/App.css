@@ -9,7 +9,7 @@ div.board{
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	font-size: 15vw;
+	font-size: 13vw;
 	border: 0.3vw solid rgb(0, 225, 255);
 	transition: 0.2s;
 	height: 10rem;
@@ -23,13 +23,11 @@ div.board{
 
 @media only screen and (max-width:730px) {
      .square-inner{
-	color: black;
-	background: #ffff;
 	align-items: center;
 	justify-content: center;
 	display: flex;
 	font-size: 15vw;
-	border: 0.3vw solid rgb(0,0,0);
+	border: 0.3vw solid rgb(0, 195, 255);
 	transition: 0.2s;
 	height: 6rem;
 	width: 6rem;
@@ -40,13 +38,11 @@ div.board{
 @media only screen and (max-width: 350px) {
  
      .square-inner{
-	color: black;
-	background: #ffff;
 	align-items: center;
 	justify-content: center;
 	display: flex;
 	font-size: 15vw;
-	border: 2px solid rgb(0,0,0);
+	border: 2px solid rgb(0, 183, 255);
 	transition: 0.2s;
 	height: 4rem;
 	width: 4rem;
