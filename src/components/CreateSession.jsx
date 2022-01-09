@@ -24,8 +24,8 @@ const CreateSession = () => {
       <div className="session-Page">
         <div className="inputforms">
           <form onSubmit={(e)=>{createsession(e)}} >
-            <input type="text" name="userName" placeholder="username" value={createrData.userName} onChange={(e) =>{Handledata(e)}} />
-            <input type="text" name="roomName"  placeholder="RoomName" value={createrData.roomName} onChange={(e) =>{Handledata(e)}} />
+            <input type="text" name="userName" placeholder="username" value={createrData.userName} onChange={(e) =>{Handledata(e)}} required/>
+            <input type="text" name="roomName"  placeholder="RoomName" value={createrData.roomName} onChange={(e) =>{Handledata(e)}} required />
 	    <button type="submit">Create & Join</button>       
 	  </form>
         </div>

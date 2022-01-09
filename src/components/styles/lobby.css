@@ -29,9 +29,25 @@ div.waiting_Area button{
 	margin: 1rem 0 0 0;
 }
 
+div.disconnected-component{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #1b1b1b;
+}
+
+div.disconnected-component h2{
+	color: #00c3ff;
+}
+
+
 div.waiting_Area button:active{
 	transform: translate(2px,2px);
-	transition: cubic-bezier(.38,.78,.94,.33);
+	color: #ffff;
+	background-color: #1b1b1b;
+	transition:all cubic-bezier(.38,.78,.94,.33);
 	box-shadow: 8px 8px 0px 1px rgba(141, 255, 11, 0.75);
 -webkit-box-shadow: 8px 8px 0px 1px rgba(126, 255, 6, 0.75);
 -moz-box-shadow: 8px 8px 0px 1px rgba(81, 255, 0, 0.75);

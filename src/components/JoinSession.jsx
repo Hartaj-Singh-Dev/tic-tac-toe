@@ -36,8 +36,8 @@ const JoinSession = () => {
       <div className="join-Session">
         <div className="Inputs">
           <form onSubmit={(e)=>{submitData(e)}} >
-            <input type="text" name="name" value={data.name} placeholder="userName" onChange={(e)=>{updateData(e)}}/>
-            <input type="text" name="code" value={data.code} placeholder="RoomName" onChange={(e)=>{updateData(e)}}/>
+            <input type="text" name="name" value={data.name} placeholder="userName" onChange={(e)=>{updateData(e)}} required/>
+            <input type="text" name="code" value={data.code} placeholder="RoomName" onChange={(e)=>{updateData(e)}} required/>
             <button type="submit">Join Session</button>
           </form>
 	  {data.invalid && <p className="Error-from-server">Invalid Code</p>}
