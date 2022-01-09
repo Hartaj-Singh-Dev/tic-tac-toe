@@ -4,6 +4,25 @@ div.board{
 }
 
 .square-inner{
+	color: rgb(0, 204, 255);
+	background: #1b1b1b;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	font-size: 15vw;
+	border: 0.3vw solid rgb(0, 225, 255);
+	transition: 0.2s;
+	height: 10rem;
+	width: 10rem;
+}
+
+.square-inner:active{
+	font-size: 11vw;
+	align-items: center;
+}
+
+@media only screen and (max-width:730px) {
+     .square-inner{
 	color: black;
 	background: #ffff;
 	align-items: center;
@@ -12,11 +31,24 @@ div.board{
 	font-size: 15vw;
 	border: 0.3vw solid rgb(0,0,0);
 	transition: 0.2s;
-	height: 15vw;
-	width: 15vw;
+	height: 6rem;
+	width: 6rem;
+}
+	
 }
 
-.square-inner:active{
-	font-size: 11vw;
+@media only screen and (max-width: 350px) {
+ 
+     .square-inner{
+	color: black;
+	background: #ffff;
 	align-items: center;
+	justify-content: center;
+	display: flex;
+	font-size: 15vw;
+	border: 2px solid rgb(0,0,0);
+	transition: 0.2s;
+	height: 4rem;
+	width: 4rem;
+}
 }
