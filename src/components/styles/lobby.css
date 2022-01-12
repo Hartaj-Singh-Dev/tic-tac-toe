@@ -14,6 +14,7 @@ div.waiting_Area h2.waiting-area-TextHeader{
 
 div.waiting_Area p {
 	color: #ffff;
+	margin: 0 0 1rem 0 ;
 }
 
 div.waiting_Area button{
@@ -21,12 +22,13 @@ div.waiting_Area button{
 	outline-width: 0;
 	padding: 0.5rem 2rem;
 	cursor: pointer;
+	margin: 1rem 0 0 0;
 	color: #1b1b1b;
 	background: #ffff;
-	font-family: "IBM Plex Mono";
+	font-family: "Poppins";
 	font-weight: 600;
 	font-size: 1rem;
-	margin: 1rem 0 0 0;
+	margin: 2rem 0 0 0;
 }
 
 div.disconnected-component{
@@ -44,11 +46,25 @@ div.disconnected-component h2{
 
 
 div.waiting_Area button:active{
-	transform: translate(2px,2px);
 	color: #ffff;
 	background-color: #1b1b1b;
 	transition:all cubic-bezier(.38,.78,.94,.33);
-	box-shadow: 8px 8px 0px 1px rgba(141, 255, 11, 0.75);
--webkit-box-shadow: 8px 8px 0px 1px rgba(126, 255, 6, 0.75);
--moz-box-shadow: 8px 8px 0px 1px rgba(81, 255, 0, 0.75);
+	box-shadow: -2px 0px 71px -8px rgba(5,230,68,0.75);
+-webkit-box-shadow: -2px 0px 71px -8px rgba(5,230,68,0.75);
+-moz-box-shadow: -2px 0px 71px -8px rgba(5,230,68,0.75);
+}
+
+@media only screen and (max-width: 600px) {
+
+	div.waiting_Area p{
+		font-size: 1rem;
+	}
+div.waiting_Area button:active{
+	color: #ffff;
+	background-color: #1b1b1b;
+	transition:all cubic-bezier(.38,.78,.94,.33);
+	box-shadow: -2px 0px 81px -1px rgba(5,230,68,0.75);
+-webkit-box-shadow: -2px 0px 81px -1px rgba(5,230,68,0.75);
+-moz-box-shadow: -2px 0px 81px -1px rgba(5,230,68,0.75);
+}	
 }
