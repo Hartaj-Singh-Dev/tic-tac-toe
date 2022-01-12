@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Londrina+Outline&family=Major+Mono+Display&family=Press+Start+2P&display=swap");
 
 div.HomePage {
@@ -21,7 +20,8 @@ div.centered-container {
 
 
 h1.tictactoeHead {
-  font-family: "Press Start 2P";
+  /* font-family: "Press Start 2P"; */
+  font-family: 'End-El-San Logo';
   font-size: 3.5vw;
   font-weight: 600;
   /* background: -webkit-linear-gradient(#269caa, #333); */
@@ -75,7 +75,7 @@ h1.name-link a , h1.name-link a{
  font-weight: 650;
  color: rgb(0, 174, 255);
  text-align: center;
-  font-family: "IBM Plex Mono";
+  font-family: "Poppins";
 }
 
 button.ButtonsMans{
@@ -86,7 +86,7 @@ button.ButtonsMans{
   padding: 0.7vw 2vw;
   font-size: 1.5vw;
   cursor:pointer;
-  font-family: "IBM Plex Mono";
+  font-family: "Poppins";
 }
 button.ButtonsMans:active{
   color: rgb(0, 0, 0);
@@ -108,7 +108,7 @@ h1.name-link span{
     background-color: #1b1b1b;  
   }
   div.centered-container {
-    height: 60%;
+    height: 50%;
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -119,7 +119,6 @@ h1.name-link span{
   
   
   h1.name-link{
-    font-family: "Press Start 2P";
     font-size: 8vw;
     font-weight: 600;
     color: rgb(245, 245, 245);
@@ -127,7 +126,7 @@ h1.name-link span{
   
   h1.tictactoeHead{
     letter-spacing: -2px;
-    font-size: 8vw;
+    font-size: 9vw;
     font-weight: 600;
   }
 
@@ -138,7 +137,6 @@ h1.name-link span{
   h1.name-link{
     font-size: 1.3rem;
     font-weight: 650;
-    font-family: "IBM Plex Mono";
     text-align: center;
   }
   
@@ -153,10 +151,9 @@ button.ButtonsMans{
   color: #ffff;
   border: 2px solid #ffff;
   border-radius: 1%;
-  padding: 0.4rem 1.5rem;
+  padding: 0.2rem 1.5rem;
   font-size: 5vw;
   cursor:pointer;
-  font-family: "IBM Plex Mono";
 }
 button.ButtonsMans:active{
   color: rgb(0, 0, 0);

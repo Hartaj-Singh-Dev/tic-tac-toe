@@ -32,7 +32,7 @@ const Modal = (props) => {
       <React.Fragment>
         <div ref={(el) => { modaldesign = el; }} className="Modal" >
           <div className="modalheader">
-            <i class="fas fa-times fa-6x" onClick={handleVisibility}></i>
+            <i class="fas fa-times fa-7x" onClick={handleVisibility}></i>
           </div>
           <div className="modalBody">{props.modalBody}</div>
 	  <div className="Error">

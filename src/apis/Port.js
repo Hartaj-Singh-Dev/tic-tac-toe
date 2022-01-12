@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 
-const port = process.env.REACT_APP_BACKEND_LINK
+const port =  "http://localhost:8000"
 
 const socket = io(port);
 

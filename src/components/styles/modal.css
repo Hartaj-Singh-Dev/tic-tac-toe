@@ -74,7 +74,23 @@ div.modalBody{
     width: 100%;
     height: 70%;
 }
+}
 
 
+@media only screen and (max-height:400px){
+       div.Modal{
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 1%;
+	/* background: rgb(0, 0, 0); */
+	/* background: linear-gradient(280deg,#904071, #269caa); */
 	
+	height: 55vh;
+	width: 80vh;
+	transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 3);
+       }
+
+
 }

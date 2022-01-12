@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Board from "./Board";
 import Stats from "./Stats";
+import Message from "./Message";
 import socket from "./../apis/Port";
 import Announcement from "./Announcement";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles/lobby.css";
 import "./styles/Game.css";
 import Spinner from "./Spinner";
+import SendIcon from '@mui/icons-material/Send';
+import { IconButton } from '@mui/material';
+
 
 const Game = (props) => {
   const [annoucmnet, setannoucmnet] = useState(false);
   const [message, setmessage] = useState("");
   const [OpponentDisconnected, setOpponentDisconnected] = useState(false);
   const [isvisible, setisVisible] = useState(false);
+  const [messageInput , setInput] = useState("");
+  const [chatmessages,setchatmessages] = useState([]);
 
   const playagain = () => {
     setannoucmnet(false);
@@ -53,10 +59,6 @@ const Game = (props) => {
       }
     });
 
-    setTimeout(() => {
-      setannoucmnet(false);
-    }, 1250);
-
     socket.on("user-disconnected", () => {
       setOpponentDisconnected(true);
     });
@@ -64,10 +66,36 @@ const Game = (props) => {
     return () => {
       socket.off("user-disconnected");
       socket.off("announcment");
+      socket.off("message-received")
     };
-  }, []);
+  }, []);  
+
+  useEffect(() => {
+    socket.on("message-received", (data)=>{ 
+    setchatmessages([...chatmessages , data]) 
+    }) 
+    return () => {
+      socket.off("message-received")
+    }
+  }, [chatmessages])
+
+  const updatingValue =(e)=>{
+    const value = e.target.value;
+
+    setInput(value)
+  } 
+ 
+
 
   const gamestate = props.gamestate;
+
+  const sendMessage = (e) =>{
+    e.preventDefault();
+    const playerName =  props.isPlayer_one ? gamestate.p1_name : gamestate.p2_name
+    console.log(playerName);
+    socket.emit("message",playerName , messageInput, gamestate.roomName)
+  }
+
   return (
     <div
       style={{
@@ -125,6 +153,23 @@ const Game = (props) => {
                   Play Again
                 </button>
               ) : null}
+            </div>
+            <div className="chat-box">
+              <div className="chat-Header">
+                  <h2>Chat Messages</h2>
+              </div>
+              <div className="chat-messages">
+               {/* {chatmessages.map((items)=>{<Message id={items.id} Time={items.time} userName={items.playerName} Message={items.Message}/>})}  */}
+              </div>
+              <div className="chat-input">
+                <form onSubmit={(e)=>{sendMessage(e)}}>
+                  <input disabled="true" type="text" onChange={(e)=>{updatingValue(e)}} className={messageInput} placeholder="Enter Your Message" required/>
+                  <button type="submit" disabled>
+                     <IconButton>
+                  <SendIcon style={{color:"rgb(0,244,255)"}}/>
+              </IconButton></button> 
+                  </form> 
+              </div>
             </div>
           </div>
         </div>
