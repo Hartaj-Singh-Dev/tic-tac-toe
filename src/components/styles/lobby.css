@@ -15,6 +15,8 @@ div.waiting_Area h2.waiting-area-TextHeader{
 div.waiting_Area p {
 	color: #ffff;
 	margin: 0 0 1rem 0 ;
+	text-align: center;
+	font: 1rem 'Poppins';
 }
 
 div.waiting_Area button{

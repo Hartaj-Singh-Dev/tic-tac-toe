@@ -1,5 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import "./styles/stats.css"
 
 const Stats = (props) => {
 
@@ -7,7 +8,6 @@ const Stats = (props) => {
 		display:"flex",
 		alignItems:"center",
 		justifyContent:"center",
-    color:"rgb(0, 204, 255)"
 	}
 
   const gamestate = props.gamestate;
@@ -27,7 +27,7 @@ const Stats = (props) => {
           exit={{ opacity: 0 }}
         >
           {gamestate.p1_turn === isPlayer_one && (
-            <div className="turn" style={{color:"rgb(0,204,255)"}}>
+            <div className="turn">
               {" "}
               <h5>Your Turn</h5>
             </div>
@@ -35,39 +35,30 @@ const Stats = (props) => {
           {gamestate.p1_turn !== isPlayer_one && (
             <div
               className="turn"
-              style={{ display: "grid", gridTemplateRows: "1fr 1fr" , color:"rgb(0,204,255)"}}
+              style={{ display: "grid", gridTemplateRows: "1fr 1fr"}}
             >
               {" "}
               <h5>{opponent_name}'s Turn</h5>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-               
-              </div>
             </div>
           )}
 
 	  <div style={{width:"100%" , height:"100%" ,display:"grid" , gridTemplateRows:"1fr 1fr" , gridTemplateColumns:"1fr 1fr 1fr"}}>
-		<div style={centeredStyle}>
+		<div  className="statsHeaders" style={centeredStyle}>
 			<p>Wins</p>
 		</div>
-		<div style={centeredStyle}>
+		<div   className="statsHeaders" style={centeredStyle}>
 			<p>Ties</p>
 		</div>
-		<div style={centeredStyle}>
+		<div className="statsHeaders" style={centeredStyle}>
 			<p>Losses</p>
 		</div>
-		<div style={centeredStyle}>
+		<div className="realStats" style={centeredStyle}>
 			<p>{wins}</p>
 		</div>
-		<div style={centeredStyle}>
+		<div className="realStats"  style={centeredStyle}>
 			<p>{ties}</p>
 		</div>
-		<div style={centeredStyle}>
+		<div  className="realStats"  style={centeredStyle}>
 			<p>{losses}</p>
 		</div>
 	  </div>

@@ -10,7 +10,7 @@ const Announcement = (props) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-		<h3>{props.children}</h3>
+		<h3 className="annoucmentOnWONLOSE">{props.children}</h3>
 	</motion.div>
       </AnimatePresence>
     </React.Fragment>

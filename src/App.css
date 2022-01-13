@@ -3,8 +3,13 @@ div.board{
 	grid-template-columns: repeat(3,1fr);
 }
 
+h3.annoucmentOnWONLOSE{
+	color: #FF4700;
+}
+
 .square-inner{
-	color: rgb(0, 204, 255);
+	/* color: rgb(0, 204, 255); */
+	color:#FF4700;
 	background: #1b1b1b;
 	align-items: center;
 	justify-content: center;

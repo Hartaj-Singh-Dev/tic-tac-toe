@@ -41,7 +41,7 @@ div.inputforms input{
 }
 
 div.inputforms button{
-	padding: 0.2vw 0.8vw;
+	padding: 0.2vw 1.5vw;
 	font-family: "IBM Plex Mono";
 	font-size: 1.2vw;
 	font-weight: 600;
@@ -98,7 +98,7 @@ div.inputforms input{
 }
 
 div.inputforms button{
-	padding: 0.9vw 2vw;
+	padding: 0.9vw 4vw;
 	font-family: "IBM Plex Mono";
 	font-size: 1.1rem;
 	font-weight: 600;

@@ -182,7 +182,7 @@ const Waiting = (props) => {
   return (
     <div className="waiting_Area">
       <h2 className="waiting-area-TextHeader">Waiting for someone to join</h2>
-      <p>you can copy the RoomName and send to other player 👇 </p>
+      <p>you can copy the RoomName by clicking on Button and send to other player 👇 </p>
       <Spinner />
       <button
         onClick={() => {
