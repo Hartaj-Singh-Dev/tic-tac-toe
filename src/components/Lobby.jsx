@@ -73,6 +73,8 @@ const Game = (props) => {
   useEffect(() => {
     socket.on("message-received", (data)=>{ 
     setchatmessages([...chatmessages , data]) 
+    setInput("")
+    console.log(data);
     }) 
     return () => {
       socket.off("message-received")
@@ -159,12 +161,14 @@ const Game = (props) => {
                   <h2>Chat Messages</h2>
               </div>
               <div className="chat-messages">
-               {/* {chatmessages.map((items)=>{<Message id={items.id} Time={items.time} userName={items.playerName} Message={items.Message}/>})}  */}
+               {chatmessages.map((items)=>{
+                   return  <Message id={items.id} Time={items.time} userName={items.playerName} Message={items.Message}/>
+               })} 
               </div>
               <div className="chat-input">
                 <form onSubmit={(e)=>{sendMessage(e)}}>
-                  <input  type="text" onChange={(e)=>{updatingValue(e)}} className={messageInput} placeholder="In Development" required  disabled/>
-                  <button type="submit" disabled>
+                  <input  type="text" value={messageInput} onChange={(e)=>{updatingValue(e)}} className={messageInput} placeholder="Enter Message" required />
+                  <button type="submit" >
                      <IconButton>
                   <SendIcon style={{color:"#FF4700"}}/>
               </IconButton></button> 

@@ -1,7 +1,6 @@
 import "./styles/Message.css";
 
 const Message = (props) => {
-	console.log("Message component Mounted");
 	
 	return (
 		<>

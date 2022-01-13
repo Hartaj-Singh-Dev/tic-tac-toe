@@ -125,5 +125,13 @@ button.playagainButton:active{
 @media only screen and (max-width: 750px){
 	div.game{
 		flex-direction: column;
+		height: 130vh;
 	}
+         div.game div.board-container{
+	     width: 100%;
+		height: 70%;
+          }
+	  div.game div.chat-and-leaderboared {
+		  width: 100%;
+	  }
 }

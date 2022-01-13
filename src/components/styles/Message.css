@@ -13,6 +13,7 @@ div.message{
 
 div.message-header{
 	text-align: left;
+	padding: 01px 04px 0px 04px;
 	color: rgb(255, 255, 255);
 	width: 100%;
 	border-bottom: 2px solid #ffff;
@@ -22,12 +23,17 @@ div.message-header{
 	justify-content: space-between;
 }
 
+div.message-body{
+	text-align: left;
+	padding: 2px 5px;
+}
+
 div.message-body p{
-	padding: 4px;
-	font-size: 1.3vw;
+	font-size: 1.1vw;
 	font-weight: 600;
 	font-family: "Poppins";
 	max-width: 100%;
-	overflow-wrap: anywhere;
+	margin-left: auto;
+	/* overflow-wrap: anywhere; */
 	color: rgb(255, 255, 255);
 }
