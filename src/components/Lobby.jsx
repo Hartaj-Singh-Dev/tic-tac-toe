@@ -31,7 +31,7 @@ const Game = (props) => {
         case "player_one":
           if (props.isPlayer_one) {
             setannoucmnet(true);
-            setmessage("You Won !!! 🥳 ");
+            setmessage("You Won !! 🥳 ");
             setisVisible(true);
           } else {
             setannoucmnet(true);
@@ -43,7 +43,7 @@ const Game = (props) => {
         case "player_two":
           if (props.isPlayer_one) {
             setannoucmnet(true);
-            setmessage("You Lost");
+            setmessage("You Lost!! ");
             setisVisible(true);
           } else {
             setannoucmnet(true);
@@ -163,10 +163,10 @@ const Game = (props) => {
               </div>
               <div className="chat-input">
                 <form onSubmit={(e)=>{sendMessage(e)}}>
-                  <input disabled="true" type="text" onChange={(e)=>{updatingValue(e)}} className={messageInput} placeholder="Enter Your Message" required/>
+                  <input  type="text" onChange={(e)=>{updatingValue(e)}} className={messageInput} placeholder="In Development" required  disabled/>
                   <button type="submit" disabled>
                      <IconButton>
-                  <SendIcon style={{color:"rgb(0,244,255)"}}/>
+                  <SendIcon style={{color:"#FF4700"}}/>
               </IconButton></button> 
                   </form> 
               </div>

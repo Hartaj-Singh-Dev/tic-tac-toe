@@ -5,15 +5,14 @@
 }
 
 div.turn h5{
-	font: 700 1rem "Roboto";
+	font: 700 1.4rem "Roboto";
 	color: var(--secondary-color);
-	padding: 0 0 10px 0;
 }
 div.realStats p{
-	font: 700 0.8rem "Roboto";
+	font: 700 1rem "Roboto";
 	color: var(--secondary-color);
 }
 div.statsHeaders p{
-	font: 600 0.8rem "Roboto";
+	font: 600 1.2rem "Roboto";
 	color: #0ed7e6;
 }

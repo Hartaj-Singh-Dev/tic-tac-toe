@@ -5,20 +5,21 @@ div.board{
 
 h3.annoucmentOnWONLOSE{
 	color: #FF4700;
+	font: 700 2rem "Poppins";
 }
 
 .square-inner{
 	/* color: rgb(0, 204, 255); */
 	color:#FF4700;
 	background: #1b1b1b;
+	display: flex;	
 	align-items: center;
 	justify-content: center;
-	display: flex;
-	font-size: 13vw;
+	font-size: 10vw;
 	border: 0.3vw solid rgb(0, 225, 255);
 	transition: 0.2s;
-	height: 10rem;
-	width: 10rem;
+	height: 10vw;
+	width: 10vw;
 }
 
 .square-inner:active{
@@ -34,8 +35,8 @@ h3.annoucmentOnWONLOSE{
 	font-size: 15vw;
 	border: 0.3vw solid rgb(0, 195, 255);
 	transition: 0.2s;
-	height: 6rem;
-	width: 6rem;
+	height: 15vw;
+	width: 15vw;
 }
 	
 }
