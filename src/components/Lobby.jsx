@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useRef } from "react";
 import Board from "./Board";
 import Stats from "./Stats";
 import Message from "./Message";
@@ -19,6 +19,8 @@ const Game = (props) => {
   const [isvisible, setisVisible] = useState(false);
   const [messageInput , setInput] = useState("");
   const [chatmessages,setchatmessages] = useState([]);
+
+  const MessageContRef = useRef(null)
 
   const playagain = () => {
     setannoucmnet(false);
@@ -74,12 +76,21 @@ const Game = (props) => {
     socket.on("message-received", (data)=>{ 
     setchatmessages([...chatmessages , data]) 
     setInput("")
-    console.log(data);
+
     }) 
     return () => {
       socket.off("message-received")
     }
   }, [chatmessages])
+
+  useEffect(() => {
+   if(MessageContRef && MessageContRef.current){
+     console.log(MessageContRef);
+     const element = MessageContRef.current;
+     element.scroll({top:element.scrollHeight , left:0 , behavior:"smooth"})
+   } 
+  }, [MessageContRef , chatmessages])
+ 
 
   const updatingValue =(e)=>{
     const value = e.target.value;
@@ -160,7 +171,7 @@ const Game = (props) => {
               <div className="chat-Header">
                   <h2>Chat Messages</h2>
               </div>
-              <div className="chat-messages">
+              <div className="chat-messages" ref={MessageContRef}>
                {chatmessages.map((items)=>{
                    return  <Message id={items.id} Time={items.time} userName={items.playerName} Message={items.Message}/>
                })} 
