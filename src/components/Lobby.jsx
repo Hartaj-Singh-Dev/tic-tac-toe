@@ -45,11 +45,11 @@ const Game = (props) => {
         case "player_two":
           if (props.isPlayer_one) {
             setannoucmnet(true);
-            setmessage("You Lost!! ");
+            setmessage("You Lost!! 🥺");
             setisVisible(true);
           } else {
             setannoucmnet(true);
-            setmessage("You Won!!");
+            setmessage("You Won!! 🥳 ");
             setisVisible(true);
           }
           break;
