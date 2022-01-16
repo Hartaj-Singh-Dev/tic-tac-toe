@@ -47,7 +47,7 @@ div.message-body p{
 	font-family: "Roboto";
 	max-width: 100%;
 	margin-left: auto;
-	/* overflow-wrap: anywhere; */
+	overflow-wrap: anywhere;
 	color: rgb(255, 255, 255);
 }
 
