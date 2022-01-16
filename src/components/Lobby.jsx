@@ -85,7 +85,6 @@ const Game = (props) => {
 
   useEffect(() => {
    if(MessageContRef && MessageContRef.current){
-     console.log(MessageContRef);
      const element = MessageContRef.current;
      element.scroll({top:element.scrollHeight , left:0 , behavior:"smooth"})
    } 
@@ -173,7 +172,7 @@ const Game = (props) => {
               </div>
               <div className="chat-messages" ref={MessageContRef}>
                {chatmessages.map((items)=>{
-                   return  <Message id={items.id} Time={items.time} userName={items.playerName} Message={items.Message}/>
+                   return  <Message playerName={props.isPlayer_one ? gamestate.p1_name : gamestate.p2_name}  key={items.id} Time={items.time} userName={items.playerName} Message={items.Message}/>
                })} 
               </div>
               <div className="chat-input">

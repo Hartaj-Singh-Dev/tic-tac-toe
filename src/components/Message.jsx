@@ -1,10 +1,10 @@
 import "./styles/Message.css";
 
 const Message = (props) => {
-	
 	return (
 		<>
-			<div className="message">
+		    
+			<div className={props.userName == props.playerName  ? "message right" : "message left"}>
 				<div className="message-body">
 					<p>{props.Message}</p>
 				</div>
@@ -12,6 +12,7 @@ const Message = (props) => {
 					<p>{props.Time}</p>
 				</div>
 			</div>
+	
 		</>
 	)
 }

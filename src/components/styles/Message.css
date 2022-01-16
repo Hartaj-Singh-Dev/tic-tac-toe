@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2&family=Roboto&family=Space+Mono&display=swap');
 
+
+
 div.message{
-	max-width: 70%;
+	max-width: 60%;
+
+	width: 50%;
 	min-height: 0.2rem;
 	display: flex;
 	margin: 10px 4px 0 4px;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
 	background: rgb(0, 144, 211);
 }
@@ -15,6 +18,16 @@ div.message{
 div.message-body{
 	text-align: left;
 	padding: 2px 5px;
+}
+
+.left{
+	float: left;
+	clear: both;
+}
+
+.right{
+	float: right;
+	clear: both;
 }
 
 div.message-time{
