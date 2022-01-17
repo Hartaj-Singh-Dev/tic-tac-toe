@@ -51,7 +51,7 @@ div.message-body p{
 	color: rgb(255, 255, 255);
 }
 
-@media only screen and (max-height:500px){
+@media only screen and (max-width:500px){
 	div.message-body p{
 		font-size: 4.5vw;
 	}
