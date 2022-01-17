@@ -49,11 +49,12 @@ div.disconnected-component h2{
 
 div.waiting_Area button:active{
 	color: #ffff;
-	background-color: #1b1b1b;
+	/* background-color: #1b1b1b; */
+	background-color: rgba(5,230,68,0.75);
 	transition:all cubic-bezier(.38,.78,.94,.33);
-	box-shadow: -2px 0px 71px -8px rgba(5,230,68,0.75);
--webkit-box-shadow: -2px 0px 71px -8px rgba(5,230,68,0.75);
--moz-box-shadow: -2px 0px 71px -8px rgba(5,230,68,0.75);
+	box-shadow: -2px 0px 111px 1px rgba(5,230,68,0.75);
+-webkit-box-shadow: -2px 0px 111px 1px rgba(5,230,68,0.75);
+-moz-box-shadow: -2px 0px 111px 1px rgba(5,230,68,0.75);
 }
 
 @media only screen and (max-width: 600px) {
