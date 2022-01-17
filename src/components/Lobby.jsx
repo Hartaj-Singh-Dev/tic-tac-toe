@@ -146,6 +146,7 @@ const Game = (props) => {
           <div className="board-container">
             <Board gamestate={gamestate} isPlayer_one={props.isPlayer_one} />
           </div>
+         
           <div className="chat-and-leaderboared">
             <div className="stats-container">
               {annoucmnet && <Announcement>{message}</Announcement>}

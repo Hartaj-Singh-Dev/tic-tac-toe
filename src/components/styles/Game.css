@@ -129,9 +129,15 @@ button.playagainButton:active{
 	}
          div.game div.board-container{
 	     width: 100%;
-		height: 70%;
+		height: 40%;
           }
 	  div.game div.chat-and-leaderboared {
 		  width: 100%;
 	  }
+}
+
+@media only screen and (max-height:480px) {
+	div.game{
+		height: 350vh;
+	}
 }

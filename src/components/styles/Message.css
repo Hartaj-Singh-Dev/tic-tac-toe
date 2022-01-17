@@ -6,10 +6,10 @@
 div.message{
 	max-width: 60%;
 
-	width: 50%;
+	width: 60%;
 	min-height: 0.2rem;
 	display: flex;
-	margin: 10px 4px 0 4px;
+	margin: 07px 4px 0 4px;
 	flex-direction: column;
 	justify-content: center;
 	background: rgb(0, 144, 211);
@@ -51,6 +51,11 @@ div.message-body p{
 	color: rgb(255, 255, 255);
 }
 
-@media only screen and (max-height:300px){
-
+@media only screen and (max-height:500px){
+	div.message-body p{
+		font-size: 4.5vw;
+	}
+	div.message-time p{
+		font-size: 2.6vw;
+	}
 }
