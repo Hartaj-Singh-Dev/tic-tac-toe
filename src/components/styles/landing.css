@@ -89,7 +89,7 @@ button.ButtonsMans{
   cursor:pointer;
   font-family: "Poppins";
   border-radius: 2rem;
-  transition: all 100ms;
+  transition: all 200ms;
 }
 button.ButtonsMans:active{
   color: rgb(0, 0, 0);
