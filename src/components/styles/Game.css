@@ -134,6 +134,10 @@ button.playagainButton:active{
 	  div.game div.chat-and-leaderboared {
 		  width: 100%;
 	  }
+	  button.playagainButton{
+		  padding: 0.6vw 1.5vw;
+		  font: 2vw;
+	  }
 }
 
 @media only screen and (max-height:480px) {

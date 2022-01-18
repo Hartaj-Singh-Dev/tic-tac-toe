@@ -31,6 +31,7 @@ div.waiting_Area button{
 	font-weight: 600;
 	font-size: 1rem;
 	margin: 2rem 0 0 0;
+	transition: all 500s;
 }
 
 div.disconnected-component{

@@ -19,6 +19,7 @@ const Game = (props) => {
   const [isvisible, setisVisible] = useState(false);
   const [messageInput , setInput] = useState("");
   const [chatmessages,setchatmessages] = useState([]);
+  const [hasWon, setHasWon] = useState(false);
 
   const MessageContRef = useRef(null)
 
@@ -34,6 +35,7 @@ const Game = (props) => {
           if (props.isPlayer_one) {
             setannoucmnet(true);
             setmessage("You Won !! 🥳 ");
+            setHasWon(true)
             setisVisible(true);
           } else {
             setannoucmnet(true);
@@ -45,11 +47,11 @@ const Game = (props) => {
         case "player_two":
           if (props.isPlayer_one) {
             setannoucmnet(true);
-            setmessage("You Lost!! 🥺");
+            setmessage("You Lost!!");
             setisVisible(true);
           } else {
             setannoucmnet(true);
-            setmessage("You Won!! 🥳 ");
+            setmessage("You Won!!");
             setisVisible(true);
           }
           break;
@@ -149,7 +151,7 @@ const Game = (props) => {
          
           <div className="chat-and-leaderboared">
             <div className="stats-container">
-              {annoucmnet && <Announcement>{message}</Announcement>}
+              {annoucmnet && <Announcement hasWon={hasWon} >{message}</Announcement>}
               {!annoucmnet && (
                 <Stats
                   gamestate={gamestate}
