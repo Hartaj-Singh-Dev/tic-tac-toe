@@ -63,12 +63,12 @@ div.waiting_Area button:active{
 	div.waiting_Area p{
 		font-size: 1rem;
 	}
-div.waiting_Area button:active{
+/* div.waiting_Area button:active{
 	color: #ffff;
 	background-color: #1b1b1b;
 	transition:all cubic-bezier(.38,.78,.94,.33);
 	box-shadow: -2px 0px 81px -1px rgba(5,230,68,0.75);
 -webkit-box-shadow: -2px 0px 81px -1px rgba(5,230,68,0.75);
 -moz-box-shadow: -2px 0px 81px -1px rgba(5,230,68,0.75);
-}	
+}	 */
 }

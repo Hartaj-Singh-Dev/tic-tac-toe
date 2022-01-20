@@ -8,6 +8,7 @@ const Partcles = ()=> {
     <Confetti
       width={width}
       height={height}
+      gravity={2}
     />
   )
 }
