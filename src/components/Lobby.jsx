@@ -21,6 +21,7 @@ const Game = (props) => {
   const [chatmessages,setchatmessages] = useState([]);
   const [hasWon, setHasWon] = useState(false);
 
+  const messageRef = useRef(null)
   const MessageContRef = useRef(null)
 
   const playagain = () => {
@@ -84,6 +85,10 @@ const Game = (props) => {
       socket.off("message-received")
     }
   }, [chatmessages])
+
+  useEffect(()=>{
+    messageRef.current.focus()
+  },[])
 
   useEffect(() => {
    if(MessageContRef && MessageContRef.current){
@@ -180,7 +185,7 @@ const Game = (props) => {
               </div>
               <div className="chat-input">
                 <form onSubmit={(e)=>{sendMessage(e)}}>
-                  <input  type="text" value={messageInput} onChange={(e)=>{updatingValue(e)}} className={messageInput} placeholder="Enter Message" required />
+                  <input  type="text" ref={messageRef} value={messageInput} onChange={(e)=>{updatingValue(e)}} className={messageInput} placeholder="Enter Message" required />
                   <button type="submit" >
                      <IconButton>
                   <SendIcon style={{color:"#FF4700"}}/>
